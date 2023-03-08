@@ -1,0 +1,57 @@
+Timer unit: 1e-06 s
+
+Total time: 0.204061 s
+File: matmult.py
+Function: NxN_matrix at line 6
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     6                                           @profile
+     7                                           def NxN_matrix(N): # NxN matrix
+     8         1          8.0      8.0      0.0      X = []
+     9       251        106.0      0.4      0.1      for i in range(N):
+    10       250     203947.0    815.8     99.9          X.append([random.randint(0,100) for r in range(N)])
+    11         1          0.0      0.0      0.0      return X
+
+Total time: 0.194963 s
+File: matmult.py
+Function: NxN_1_matrix at line 13
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    13                                           @profile
+    14                                           def NxN_1_matrix(N): # Nx(N+1) matrix
+    15         1          1.0      1.0      0.0      Y = []
+    16       251         91.0      0.4      0.0      for i in range(N):
+    17       250     194871.0    779.5    100.0          Y.append([random.randint(0,100) for r in range(N+1)])
+    18         1          0.0      0.0      0.0      return Y
+
+Total time: 0.000316 s
+File: matmult.py
+Function: result_NxN_1 at line 20
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    20                                           @profile
+    21                                           def result_NxN_1(N): # result is Nx(N+1)
+    22         1          0.0      0.0      0.0      result = []
+    23       251         54.0      0.2     17.1      for i in range(N):
+    24       250        262.0      1.0     82.9          result.append([0] * (N+1))
+    25         1          0.0      0.0      0.0      return result
+
+Total time: 12.4637 s
+File: matmult.py
+Function: X_Y_iter at line 27
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    27                                           @profile
+    28                                           def X_Y_iter(X, Y, result):
+    29                                               # iterate through rows of X
+    30       251         72.0      0.3      0.0      for i in range(len(X)):
+    31                                                   # iterate through columns of Y
+    32     63000      16336.0      0.3      0.1          for j in range(len(Y[0])):
+    33                                                       # iterate through rows of Y
+    34  15750250    3936928.0      0.2     31.6              for k in range(len(Y)):
+    35  15687500    8510320.0      0.5     68.3                  result[i][j] += X[i][k] * Y[k][j]
+

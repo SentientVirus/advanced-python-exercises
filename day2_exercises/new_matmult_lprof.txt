@@ -1,0 +1,45 @@
+Timer unit: 1e-06 s
+
+Total time: 0.00157 s
+File: matmult.py
+Function: NxN_matrix at line 7
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     7                                           @profile
+     8                                           def NxN_matrix(N): # NxN matrix
+     9         1       1569.0   1569.0     99.9      X = np.random.randint(0, 100, size = (N, N))
+    10         1          1.0      1.0      0.1      return X
+
+Total time: 0.000698 s
+File: matmult.py
+Function: NxN_1_matrix at line 12
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    12                                           @profile
+    13                                           def NxN_1_matrix(N): # Nx(N+1) matrix
+    14         1        697.0    697.0     99.9      Y = np.random.randint(0, 100, size = (N, N+1))
+    15         1          1.0      1.0      0.1      return Y
+
+Total time: 0.00014 s
+File: matmult.py
+Function: result_NxN_1 at line 17
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    17                                           @profile
+    18                                           def result_NxN_1(N): # result is Nx(N+1)
+    19         1        140.0    140.0    100.0      result = np.zeros(shape = (N, N+1), dtype = int)
+    20         1          0.0      0.0      0.0      return result
+
+Total time: 0.007383 s
+File: matmult.py
+Function: X_Y_iter at line 22
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    22                                           @profile
+    23                                           def X_Y_iter(X, Y, result): #I would start by optimizing this section
+    24         1       7383.0   7383.0    100.0      result += np.matmul(X, Y)
+
