@@ -6,7 +6,6 @@ Created on Tue Mar  7 13:22:49 2023
 @author: marmo435
 """
 
-#from . import harmless
 from .hmammals import Mammals
 from .hbirds import Birds
 from .hfish import Fish
