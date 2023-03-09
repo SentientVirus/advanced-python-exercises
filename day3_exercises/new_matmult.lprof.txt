@@ -1,0 +1,45 @@
+Timer unit: 1e-06 s
+
+Total time: 0.000844 s
+File: new_matmult.py
+Function: NxN_matrix at line 6
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     6                                           @profile
+     7                                           def NxN_matrix(N): # NxN matrix
+     8         1        843.0    843.0     99.9      X = np.random.randint(0, 100, size = (N, N))
+     9         1          1.0      1.0      0.1      return X
+
+Total time: 0.000768 s
+File: new_matmult.py
+Function: NxN_1_matrix at line 11
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    11                                           @profile
+    12                                           def NxN_1_matrix(N): # Nx(N+1) matrix
+    13         1        767.0    767.0     99.9      Y = np.random.randint(0, 100, size = (N, N+1))
+    14         1          1.0      1.0      0.1      return Y
+
+Total time: 0.000155 s
+File: new_matmult.py
+Function: result_NxN_1 at line 16
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    16                                           @profile
+    17                                           def result_NxN_1(N): # result is Nx(N+1)
+    18         1        154.0    154.0     99.4      result = np.zeros(shape = (N, N+1), dtype = int)
+    19         1          1.0      1.0      0.6      return result
+
+Total time: 0.007751 s
+File: new_matmult.py
+Function: X_Y_iter at line 21
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    21                                           @profile
+    22                                           def X_Y_iter(X, Y, result):
+    23         1       7751.0   7751.0    100.0      result += np.matmul(X, Y)
+
