@@ -22,9 +22,9 @@ exp_data = exp_data[~np.isnan(exp_data[:, 0])]
 
 model_x = interp1d(exp_data[:, 0], exp_data[:, 1], kind = 'nearest')
 
-new_x = np.linspace(min(exp_data[:, 0]), max(exp_data[:, 0]), len(exp_data))
+new_x = np.linspace(min(exp_data[:, 0]), max(exp_data[:, 0]), 30)
 new_y = model_x(new_x)
 
 plt.scatter(exp_data[:, 0], exp_data[:, 1])
-plt.scatter(new_x, new_y, alpha = 0.2)
+plt.scatter(new_x, new_y)
 plt.savefig('approximation.png')
