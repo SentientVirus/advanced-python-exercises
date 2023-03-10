@@ -1,0 +1,9 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.7, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: /Users/marmo435/python-course/day4-bestpractices-2/day4_exercises
+plugins: anyio-2.2.0
+collected 6 items
+
+test_simple_math.py ......                                               [100%]
+
+============================== 6 passed in 0.02s ===============================
